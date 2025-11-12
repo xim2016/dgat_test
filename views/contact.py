@@ -57,7 +57,7 @@ def send_email_via_sendgrid(name, email, message):
             "to": [{"email": "xim33@pitt.edu"}],
             "subject": f"New contact form message from {name}"
         }],
-        "from": {"email": "osamnbeyoglulab@outlook.com"},  # Update with verified sender
+        "from": {"email": "osmanbeyoglulab@outlook.com"},  # Update with verified sender
                 "name": "DGAT Contact Form"
     },
     "reply_to": {
