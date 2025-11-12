@@ -19,10 +19,10 @@ scikit-learn==1.4.2
 # ===== PyTorch (CPU only) =====
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.3.1
-torchvision==0.18.1+cpu
-torchaudio==2.3.1+cpu
+torchvision==0.18.1
+torchaudio==2.3.1
 -f https://data.pyg.org/whl/torch-2.3.1+cpu.html
-torch_geometric==2.5.3
+torch_geometric
 torch_scatter==2.1.2
 torch_sparse==0.6.18
 pyg_lib==0.4.0
@@ -30,4 +30,4 @@ pyg_lib==0.4.0
 python-igraph==0.11.5
 leidenalg==0.10.2
 
-sendgrid
+sendgrid==6.11.0
