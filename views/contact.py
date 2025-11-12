@@ -52,7 +52,7 @@ def send_email_via_sendgrid(name, email, message):
             "to": [{"email": "osmanbeyogluhu@pitt.edu"}],
             "subject": f"New contact form message from {name}"
         }],
-        "from": {"email": "no-reply@yourdomain.com"},  # Update with verified sender
+        "from": {"email": "osamnbeyoglulab@outlook.com"},  # Update with verified sender
         "content": [{
             "type": "text/plain",
             "value": f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
