@@ -54,10 +54,10 @@ def send_email_via_sendgrid(name, email, message):
     }
     data = {
         "personalizations": [{
-            "to": [{"email": "xj_ma@yahoo.com"}],
+            "to": [{"email": "xim33@pitt.edu"}],
             "subject": f"New contact form message from {name}"
         }],
-        "from": {"email": "osmanbeyoglulab@outlook.com",  # Update with verified sender
+        "from": {"email": "xim33@pitt.edu",  # Update with verified sender
                 "name": "DGAT Contact Form"
     },
     "reply_to": {
