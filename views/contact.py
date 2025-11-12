@@ -40,7 +40,12 @@ except KeyError:
 def send_email_via_sendgrid(name, email, message):
     """Send email via SendGrid API"""
     if not email_configured:
+        st.error("SendGrid not configured")
         return None
+    
+    # Debug: Show first/last few characters of API key
+    st.write(f"API Key starts with: {SENDGRID_API_KEY[:10]}...")
+    st.write(f"API Key ends with: ...{SENDGRID_API_KEY[-10:]}")
     
     url = "https://api.sendgrid.com/v3/mail/send"
     headers = {
@@ -53,6 +58,12 @@ def send_email_via_sendgrid(name, email, message):
             "subject": f"New contact form message from {name}"
         }],
         "from": {"email": "osamnbeyoglulab@outlook.com"},  # Update with verified sender
+                "name": "DGAT Contact Form"
+    },
+    "reply_to": {
+            "email": email,
+            "name": name
+        },
         "content": [{
             "type": "text/plain",
             "value": f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
@@ -61,6 +72,8 @@ def send_email_via_sendgrid(name, email, message):
     
     try:
         r = requests.post(url, headers=headers, json=data)
+        if r.status_code != 202:
+            st.error(f"SendGrid Error {r.status_code}: {r.text}")
         return r.status_code
     except Exception as e:
         st.error(f"Error connecting to email service: {str(e)}")
